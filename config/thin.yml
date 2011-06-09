@@ -2,17 +2,17 @@
 #   licensed under the Affero General Public License version 3 or later.  See
 #   the COPYRIGHT file.
 
-rackup: /usr/local/app/diaspora/current/config.ru
-pid: /tmp/pids/thin.pid
+rackup: /var/lib/diaspora/diaspora/config.ru
+pid: /var/run/thin/thin.pid
 wait: 30
 timeout: 600
-log: /usr/local/log/thin
+log: /var/log/thin
 max_conns: 1024
 require: []
 
 max_persistent_conns: 512
-environment: development
-servers: 1
+environment: production
+servers: 5
 daemonize: true
 #chdir: /usr/applications/localhash/current
 #socket: /tmp/thin.sock
