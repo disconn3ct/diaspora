@@ -25,7 +25,7 @@ namespace :deploy do
     Create the shared directories
   DESC
   task :create_shared_directories do
-    run "mkdir -p #{shared_path}/config"
+    run "mkdir -p #{shared_path}/config/initializers"
     run "mkdir -p #{shared_path}/app/views/home"
     run "mkdir -p #{shared_path}/public/images"
     run "mkdir -p #{shared_path}/uploads"
