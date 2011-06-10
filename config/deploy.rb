@@ -18,11 +18,32 @@ set :scm_verbose, true
 set :repository_cache, "remote_cache"
 set :deploy_via, :checkout
 
+after "deploy:setup", "deploy:create_shared_directories"
+
 namespace :deploy do
+  desc <<-DESC
+    Create the shared directories
+  DESC
+  task :create_shared_directories do
+    run "mkdir -p #{shared_path}/config"
+    run "mkdir -p #{shared_path}/app/views/home"
+    run "mkdir -p #{shared_path}/public/images"
+    run "mkdir -p #{shared_path}/uploads"
+  end
   task :symlink_config_files do
     run "ln -s -f #{shared_path}/config/database.yml #{current_path}/config/database.yml"
     run "ln -s -f #{shared_path}/config/application.yml #{current_path}/config/application.yml"
     run "ln -s -f #{shared_path}/config/oauth_keys.yml #{current_path}/config/oauth_keys.yml"
+  end
+
+  task :symlink_static_files do
+    # Excluded in .gitignore due to "trademark sillyness"
+    run "ln -s -f #{shared_path}/app/views/home/_show.html.haml #{current_path}/app/views/home/_show.html.haml"
+    run "ln -s -f #{shared_path}/app/views/home/_show.mobile.haml #{current_path}/app/views/home/_show.mobile.haml"
+    run "ln -s -f #{shared_path}/public/images/ball_small.png #{current_path}/public/images/ball_small.png"
+    run "ln -s -f #{shared_path}/public/images/ball.png #{current_path}/public/images/ball.png"
+    # Uploads directory shouldn't disappear on update
+    run "ln -s -f #{shared_path}/uploads #{current_path}/public/uploads"
   end
 
   task :symlink_cookie_secret do
@@ -65,4 +86,4 @@ namespace :deploy do
   end
 end
 
-after "deploy:symlink", "deploy:symlink_config_files", "deploy:symlink_cookie_secret", "deploy:bundle_static_assets"
+after "deploy:symlink", "deploy:symlink_config_files", "deploy:symlink_static_files", "deploy:symlink_cookie_secret", "deploy:bundle_static_assets"
