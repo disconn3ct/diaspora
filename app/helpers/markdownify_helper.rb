@@ -26,7 +26,7 @@ module MarkdownifyHelper
       escape = "\\"
       link = $1
       url = $2
-      title = $3
+      title = $3.
       url.gsub!("_", "\\_")
       url.gsub!("*", "\\*")
       protocol = (url =~ /^\w+:\/\//) ? '' :'http://'
@@ -36,8 +36,8 @@ module MarkdownifyHelper
 
     message.gsub!(/\[\s*([^\[]+?)\s*\]\(\s*([^ ]+)\s*\)/) do |m|
       escape = "\\"
-      link = $1
-      url = $2
+      link = $1.strip
+      url = $2.strip
       url.gsub!("_", "\\_")
       url.gsub!("*", "\\*")
       protocol = (url =~ /^\w+:\/\//) ? '' :'http://'
