@@ -15,8 +15,9 @@ set :application, 'diaspora'
 set :scm, :git
 set :use_sudo, false
 set :scm_verbose, true
-set :repository_cache, "remote_cache"
-set :deploy_via, :checkout
+#set :repository_cache, "remote_cache"
+#set :deploy_via, :checkout
+set :deploy_via, :remote_cache
 
 after "deploy:setup", "deploy:create_shared_directories"
 
