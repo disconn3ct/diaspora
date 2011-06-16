@@ -196,6 +196,7 @@ GEM
       actionpack (~> 3.0)
       i18n-inflector (~> 2.5)
       railties (~> 3.0)
+    is-gd-shrinker (0.1.0)
     jammit (0.5.4)
       closure-compiler (>= 0.1.0)
       yui-compressor (>= 0.9.1)
