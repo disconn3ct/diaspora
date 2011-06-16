@@ -46,6 +46,10 @@
               = aspect_badges(aspects_with_person, :link => false)
 
         .public_toggle
+          %span#shorten.question_mark{:style=>'top:3px;position:relative;margin-right:5px', :title=>"Shorten your URL by adding an extra / in it!<br>E.g. http:<b>///</b>www.com or https:<b>///</b>www.com"}=(' Shorten URL ')
+          %span#mention.question_mark{:style=>'top:3px;position:relative;margin-right:5px', :title=>"Mention another Diaspora user by entering a @ and then their name"}=(' Mention Users ')
+          %span#public.question_mark{:style=>'top:3px;position:relative;margin-right:5px', :title=>"Toggle your public services by clicking their icons, when they are highlighted your post will go to them"}=(' Public Select ')
+          %span#aspects.question_mark{:style=>'top:3px;position:relative;margin-right:5px', :title=>"Toggle your aspects to have this post go to more than one at a time"}=(' Aspects ')
           %span#publisher_service_icons
             = t("shared.publisher.click_to_share_with")
             - if aspect == :all || :profile
