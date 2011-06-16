@@ -10,6 +10,8 @@
       = image_tag 'icons/spechbubble_2.png', :class => 'more_comments_icon'
       %b= comment_toggle(comments.size)
 
+  =google_ad(468, 60, 2060502617)
+
 %ul.comments{:id => post.id, :class => ("hidden" if comments.size == 0 && !defined?(force_open) && !is_expanded)}
   -if comments.size > 3
     .older_comments{:class => ("hidden inactive" if defined?(condensed) && condensed)}

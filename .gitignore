@@ -11,6 +11,7 @@ config/script_server_config.yml
 config/fb_config.yml
 config/oauth_keys.yml
 config/initializers/secret_token.rb
+config/initializers/ppds_doodle_ad_stub.rb
 config/redis.conf
 config/deploy_config.yml
 config/newrelic.yml
