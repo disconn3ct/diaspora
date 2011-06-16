@@ -2,7 +2,7 @@ module Ppds # :nodoc:
 
   class DoodleAdStub
 
-    cattr_accessor :client_id, :language, :ad_slot
+    cattr_accessor :client_id, :language
 
   end
 
@@ -30,15 +30,15 @@ module Ppds # :nodoc:
       js << "google_ad_height = #{@ad_height};\n"
       js << "//-->\n"
       js << "</script>\n"
-      js << "<script type=\"text/javascriot\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\" type=\"text/javascript\"></script>\n"
+      js << "<script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\" type=\"text/javascript\"></script>\n"
       js
 
     end
 
-    def google_ad(ad_width, ad_height, *ad_type)
+    def google_ad(ad_width, ad_height, ad_slot)
       @ad_width  = ad_width
       @ad_height = ad_height
-      @ad_slot   = sanitize_type(ad_type)
+      @ad_slot   = ad_slot
       "<div class=\"google_adsense ad#{@ad_width}x#{@ad_height}\">\n" + js_code + "</div>\n"
     end
 
