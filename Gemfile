@@ -23,6 +23,9 @@ gem 'twitter', '1.5.0'
 gem 'haml', '3.0.25'
 gem 'will_paginate', '3.0.pre2'
 
+# URL shrink/expand
+gem 'is-gd-shrinker', '~> 0.1.0'
+
 #Inflected translations
 gem 'i18n-inflector-rails', '~> 1.0'
 

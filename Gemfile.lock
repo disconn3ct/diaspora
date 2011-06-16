@@ -190,6 +190,7 @@ GEM
       actionpack (~> 3.0)
       i18n-inflector (~> 2.5)
       railties (~> 3.0)
+    is-gd-shrinker (0.1.0)
     jammit (0.5.4)
       closure-compiler (>= 0.1.0)
       yui-compressor (>= 0.9.1)
@@ -423,6 +424,7 @@ DEPENDENCIES
   haml (= 3.0.25)
   http_accept_language!
   i18n-inflector-rails (~> 1.0)
+  is-gd-shrinker (~> 0.1.0)
   jammit (= 0.5.4)
   jasmine (= 1.0.2.1)
   json (= 1.4.6)
