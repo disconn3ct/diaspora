@@ -39,7 +39,7 @@ GIT
 
 GIT
   remote: git://github.com/shawnwebs/is-gd-shrinker.git
-  revision: 5b353a2fef62eada5bdc7af8bad882335292a8d4
+  revision: 97c9cdf5b132b5cb8f416557c893cb8408cf2731
   specs:
     is-gd-shrinker (0.0.0)
 
