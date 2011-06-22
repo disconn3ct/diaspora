@@ -26,7 +26,7 @@ module MarkdownifyHelper
       escape = "\\"
       link = $1
       url = $2
-      title = $3.
+      title = $3
       url.gsub!("_", "\\_")
       url.gsub!("*", "\\*")
       protocol = (url =~ /^\w+:\/\//) ? '' :'http://'
